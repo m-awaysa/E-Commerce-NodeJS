@@ -1,7 +1,10 @@
 # E-Commerce-NodeJS
 env
+*
 DBURI=mongodb://localhost:27017/e-commerce
+*
 TokenSignature =********
+*
 BearerToken=*******
 SaltRound =8
 BASEURL='/api/v1'
