@@ -29,13 +29,11 @@ const createProduct = async (req, res, next) => {
       images.push(secure_url)
       imagesPublicIds.push(public_id)
     }
-
-
-
     const product = await productModel.create({
       slug,
       name,
       amount,
+      stock:amount,
       price,
       discount,
       finalPrice,

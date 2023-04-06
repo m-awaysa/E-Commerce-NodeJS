@@ -66,18 +66,20 @@ const deleteCoupon = async (req, res, next) => {
 const ValidCoupons = async (req, res, next) => {
   const { page } = req.query;
   const { skip, limit } = pagination(page);
-  let now = moment().format("DD/MM/YYYY");
+  let now = moment();
   let coupons = await couponModel.find({});
 
   let data = [];
 
   for (const coupon of coupons) {
     let exp = coupon.expireDate;
-    let diff = now.diff(exp,"days");
+    let diff = now.diff(exp, "days");
 
-    return res.json(exp - now);
+    if (diff < 0) {
+      data.push(coupon);
+    }
   }
-
+  return res.status(200).json({ message: 'success', data });
 }
 
 

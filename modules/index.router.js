@@ -7,6 +7,7 @@ const brandRouter = require('./brand/brand.route');
 const productRouter = require('./product/product.route');
 const couponRouter = require('./coupon/coupon.route');
 const cartRouter = require('./cart/cart.route');
+const orderRouter = require('./order/order.route');
 
 
 
@@ -19,5 +20,6 @@ module.exports = {
     brandRouter,
     productRouter,
     couponRouter,
-    cartRouter
+    cartRouter,
+    orderRouter
 }

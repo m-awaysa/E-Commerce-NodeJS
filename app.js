@@ -25,6 +25,7 @@ app.use(`${baseUrl}/brand`,indexRouter.brandRouter);
 app.use(`${baseUrl}/product`,indexRouter.productRouter);
 app.use(`${baseUrl}/coupon`,indexRouter.couponRouter);
 app.use(`${baseUrl}/cart`,indexRouter.cartRouter);
+app.use(`${baseUrl}/order`,indexRouter.orderRouter);
 
 app.use('*', (req, res)=>{
     res.json({message:'error 404'});

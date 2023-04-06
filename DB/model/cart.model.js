@@ -16,6 +16,7 @@ const cartSchema = new mongoose.Schema({
     userId: {
         type: Types.ObjectId,
         ref: 'user',
+        unique:[true,'only one cart'],
         required: [true, 'cart owner is required'],
     },
 }, { timestamps: true });
